@@ -16,7 +16,7 @@ public class CategoriaForm {
 	@Length(min = 4, message = "O Campo deve ser preenchido no minimo com 4 letras")
 	private String titulo;
 	
-	@Cor 
+	@Cor
 	@NotNull (message = "O Campo deve ser obrigatório")
 	@NotEmpty (message = "O Campo deve ser obrigatório")
 	@Length(min = 4, message = "O campo deve ter no minimo 4 letras")
