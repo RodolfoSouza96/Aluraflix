@@ -2,6 +2,7 @@ package br.com.aluraflix.aluraflix.controller;
 
 
 import java.net.URI;
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -66,6 +67,13 @@ public class VideoController {
 				return ResponseEntity.notFound().build();
 		
 		
+	}
+	
+	@GetMapping("/free")
+	public ResponseEntity<List<VideoDto>> listafree(){
+		List<Video> video = videoRepository.findFree(10);
+		
+		return ResponseEntity.ok(VideoDto.converterlista(video));
 	}
 		
 	

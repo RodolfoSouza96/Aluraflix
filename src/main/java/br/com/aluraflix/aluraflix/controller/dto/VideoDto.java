@@ -1,5 +1,8 @@
 package br.com.aluraflix.aluraflix.controller.dto;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.data.domain.Page;
 
 import br.com.aluraflix.aluraflix.modelo.Video;
@@ -42,6 +45,10 @@ public class VideoDto {
 
 	public static Page<VideoDto> converter(Page<Video> video) {
 		return video.map(VideoDto::new);
+	}
+
+	public static List<VideoDto> converterlista(List<Video> lista) {
+		return lista.stream().map(VideoDto::new).collect(Collectors.toList());
 	}
 	
 		
